@@ -3,7 +3,7 @@ import { Subscribe, ContainerType, Container } from "unstated";
 
 type ContainersArray = (ContainerType<object> | Container<object>)[];
 
-export const connect = (subscriptions: ContainersArray) => (
+export const Connect = (subscriptions: ContainersArray) => (
   component: React.ComponentClass<{ containers: Container<object>[] }>
 ) => (props: object) => (
   <Subscribe to={subscriptions}>
@@ -17,7 +17,7 @@ type ContainersObject = {
   [index: string]: ContainerType<object> | Container<object>;
 };
 
-export const connectMap = (subscriptions: ContainersObject) => (
+export const ConnectMap = (subscriptions: ContainersObject) => (
   component: React.ComponentClass<{
     containers: { [index: string]: Container<object> };
   }>

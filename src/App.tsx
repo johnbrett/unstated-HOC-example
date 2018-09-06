@@ -1,22 +1,30 @@
-import * as React from 'react';
-import './App.css';
+import * as React from "react";
+import { Provider } from "unstated";
+import styled, { injectGlobal } from "./theme";
+import { CounterContainer } from "./counterContainer";
+import { Counter } from "./Counter";
 
-const logo = require('./logo.svg');
+injectGlobal`
+  margin: 0;
+  padding: 0;
+`;
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const customCounter = new CounterContainer({ count: 5 });
 
-export default App;
+const AppContainer = styled.div`
+  text-align: center;
+  font-family: "Roboto";
+`;
+
+export const App = () => (
+  <AppContainer>
+    <h4>Unstated Demo</h4>
+    <Provider>
+      <Counter />
+      <Counter />
+    </Provider>
+    <Provider inject={[customCounter]}>
+      <Counter />
+    </Provider>
+  </AppContainer>
+);
