@@ -5,7 +5,7 @@
     - Connect.tsx // redux-like "connect" for subscribing to stores via a HOC
     - CountDisplay.tsx // displays `count: 1`, subscribes to store for value
     - Counter.tsx // component for increasing/decreasing count
-    - counterCounter.ts // the unstated container
+    - counterContainer.ts // the unstated container
     - index.tsx // app root
     - theme.tsx // required to make styled-componnts work with Typescript
 */
