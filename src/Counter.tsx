@@ -4,10 +4,10 @@ import { Connect } from "./Connect";
 import { CountDisplay } from "./CountDisplay";
 import styled from "./theme";
 
-const StyledCounter = styled.div`
+const Div = styled.div`
   display: block;
 `;
-const StyledButton = styled.button`
+const Button = styled.button`
   display: inline;
   margin: 5px;
 `;
@@ -27,11 +27,11 @@ class _Counter extends React.Component<{
     const [counterContainer] = this.props.containers;
     const { increment, decrement } = counterContainer;
     return (
-      <StyledCounter>
-        <StyledButton onClick={decrement}>-</StyledButton>
+      <Div>
+        <Button onClick={decrement}>-</Button>
         <CountDisplay label="Count" />
-        <StyledButton onClick={increment}>+</StyledButton>
-      </StyledCounter>
+        <Button onClick={increment}>+</Button>
+      </Div>
     );
   }
 }
